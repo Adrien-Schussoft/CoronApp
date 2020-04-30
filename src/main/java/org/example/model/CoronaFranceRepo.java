@@ -7,16 +7,14 @@ public class CoronaFranceRepo {
     CoronaParserFrance coronaParserFrance = new CoronaParserFrance();
 
     public CoronaFranceRepo(){
-
     }
 
-    public int getCriticals() throws IOException {
-
+    private int criticals() throws IOException {
         int criticals = coronaParserFrance.parser().getInt("critical");
         return criticals;
     }
 
-    public int getCases() throws IOException {
+    private int cases() throws IOException {
         int cases = coronaParserFrance.parser().getInt("cases");
         return cases;
     }
@@ -26,23 +24,49 @@ public class CoronaFranceRepo {
         return todayCases;
     }
 
-    public int getDeaths() throws IOException {
+    private int deaths() throws IOException {
         int deaths = coronaParserFrance.parser().getInt("deaths");
         return deaths;
     }
 
-    public int getTodayDeaths() throws IOException {
+    private int todayDeaths() throws IOException {
         int todayDeaths = coronaParserFrance.parser().getInt("todayDeaths");
         return todayDeaths;
     }
 
-    public int getRecovered() throws IOException {
+    private int recovered() throws IOException {
         int recovered = coronaParserFrance.parser().getInt("recovered");
         return recovered;
     }
 
-    public int getActive() throws IOException {
+    private int active() throws IOException {
         int active = coronaParserFrance.parser().getInt("active");
         return active;
+    }
+
+//Getters
+
+    public int getCriticals() throws IOException {
+        return this.criticals();
+    }
+
+    public int getCases() throws IOException {
+        return  this.cases();
+    }
+
+    public int getDeaths() throws  IOException {
+        return this.deaths();
+    }
+
+    public int getTodayDeaths() throws IOException {
+        return this.todayDeaths();
+    }
+
+    public int getRecovered() throws IOException {
+        return this.recovered();
+    }
+
+    public int getActive() throws IOException {
+        return this.active();
     }
 }
