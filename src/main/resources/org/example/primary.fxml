@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="vbox" alignment="CENTER" spacing="20.0" styleClass="background" stylesheets="@../../css/application.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
+   <children>
+      <Label styleClass="labelMainTitle" text="Chiffres du Corona-19" />
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label styleClass="labelTitre" text="Nombre de cas: " />
+            <Label fx:id="label_test" styleClass="labelInfo" text="Cases" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label styleClass="labelTitre" text="Nombre de morts: " />
+            <Label fx:id="label_deaths" styleClass="labelInfo" text="Morts" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label styleClass="labelTitre" text="Cas critiques: " />
+            <Label fx:id="label_critical" styleClass="labelInfo" text="critical" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label styleClass="labelTitre" text="Malades actifs: " />
+            <Label fx:id="label_actif" styleClass="labelInfo" text="actif" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="561.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label styleClass="labelTitre" text="Guéries: " />
+            <Label fx:id="label_guerie" styleClass="labelInfo" text="guéries" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label styleClass="labelTitre" text="Morts aujourd'hui: " />
+            <Label fx:id="label_today" styleClass="labelInfo" text="todayDeath" />
+         </children>
+      </HBox>
+      <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" styleClass="btn" text="Quitter" />
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
