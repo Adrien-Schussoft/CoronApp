@@ -19,7 +19,7 @@ public class CoronaFranceRepo {
         return cases;
     }
 
-    public int getTodayCases() throws IOException {
+    private int todayCases() throws IOException {
         int todayCases = coronaParserFrance.parser().getInt("todayCases");
         return todayCases;
     }
@@ -52,6 +52,10 @@ public class CoronaFranceRepo {
 
     public int getCases() throws IOException {
         return  this.cases();
+    }
+
+    public int getTodayCases() throws IOException{
+        return this.todayCases();
     }
 
     public int getDeaths() throws  IOException {
