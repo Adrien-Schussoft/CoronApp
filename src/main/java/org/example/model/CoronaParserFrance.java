@@ -8,7 +8,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-
 public class CoronaParserFrance {
 
     public JSONObject parser() throws IOException {
