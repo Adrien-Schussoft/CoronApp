@@ -1,7 +1,5 @@
 package org.example.model;
 
-import org.json.JSONObject;
-
 import java.io.IOException;
 
 public class CoronaRepo {
