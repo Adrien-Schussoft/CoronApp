@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class CoronaParserImpl implements CoronaParser {
+public class CoronaParserImpl implements ICoronaParser {
 
     @Override
     public JSONObject parserUniv(String country) throws IOException {
