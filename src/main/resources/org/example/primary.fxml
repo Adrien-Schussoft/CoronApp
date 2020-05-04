@@ -3,16 +3,24 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox fx:id="vbox" alignment="CENTER" spacing="20.0" styleClass="background" stylesheets="@../../css/application.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
    <children>
       <Label styleClass="labelMainTitle" text="Chiffres du Corona-19" />
+      <Label fx:id="label_country" styleClass="labelCountry" text="Country" />
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label styleClass="labelTitre" text="Nombre de cas: " />
             <Label fx:id="label_test" styleClass="labelInfo" text="Cases" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label styleClass="labelTitre" text="Cas quotidiens:  " />
+            <Label fx:id="label_todayCases" styleClass="labelInfo" text="todayCases" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
@@ -45,7 +53,14 @@
             <Label fx:id="label_today" styleClass="labelInfo" text="todayDeath" />
          </children>
       </HBox>
-      <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" styleClass="btn" text="Quitter" />
+      <Label fx:id="label_info" alignment="CENTER_RIGHT" contentDisplay="RIGHT" styleClass="labelInfo" text="Info" />
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label styleClass="labelTitre" text="Pays : " />
+            <TextField fx:id="txtfield_choice" maxWidth="-Infinity" />
+         </children>
+      </HBox>
+      <Button fx:id="btn_search" mnemonicParsing="false" onAction="#setCountryChoicedData" styleClass="btn2" text="Search" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

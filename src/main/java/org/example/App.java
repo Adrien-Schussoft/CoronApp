@@ -27,7 +27,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("primary"), 640, 560);
         //On enlève les bordures.
         stage.initStyle(StageStyle.UNDECORATED);
         //On le rend transparent.

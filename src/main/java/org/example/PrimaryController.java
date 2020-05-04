@@ -9,7 +9,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
-import org.example.model.CoronaFranceRepo;
+import org.example.model.CoronaRepo;
+import org.example.model.CoronaParserImpl;
 
 public class PrimaryController implements Initializable {
 
@@ -26,7 +27,15 @@ public class PrimaryController implements Initializable {
     @FXML
     Label label_guerie = new Label();
     @FXML
-    Button btn_exit = new Button();
+    Label label_country = new Label();
+    @FXML
+    Label label_todayCases = new Label();
+    @FXML
+    Label label_info = new Label();
+    @FXML
+    TextField txtfield_choice = new TextField();
+    @FXML
+    Button btn_search = new Button();
     @FXML
     VBox vbox = new VBox();
 
@@ -45,24 +54,46 @@ public class PrimaryController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         try {
-            CoronaFranceRepo coronaFranceRepo = new CoronaFranceRepo();
-
-            label_test.setText(String.valueOf(coronaFranceRepo.getCases()));
-            label_today.setText(String.valueOf(coronaFranceRepo.getTodayDeaths()));
-            label_deaths.setText(String.valueOf(coronaFranceRepo.getDeaths()));
-            label_critical.setText(String.valueOf(coronaFranceRepo.getCriticals()));
-            label_actif.setText(String.valueOf(coronaFranceRepo.getActive()));
-            label_guerie.setText(String.valueOf(coronaFranceRepo.getRecovered()));
+            CoronaRepo coronaRepo = new CoronaRepo();
+            label_info.setText("");
+            label_country.setText(String.valueOf(coronaRepo.getCountry()));
+            label_test.setText(String.valueOf(coronaRepo.getCases()));
+            label_todayCases.setText(String.valueOf(coronaRepo.getTodayCases()));
+            label_today.setText(String.valueOf(coronaRepo.getTodayDeaths()));
+            label_deaths.setText(String.valueOf(coronaRepo.getDeaths()));
+            label_critical.setText(String.valueOf(coronaRepo.getCriticals()));
+            label_actif.setText(String.valueOf(coronaRepo.getActive()));
+            label_guerie.setText(String.valueOf(coronaRepo.getRecovered()));
              } catch (IOException e) {
                  e.printStackTrace();
         }
         initializeContextMenu();
     }
 
+    @FXML
+    private void setCountryChoicedData() throws IOException {
+
+        try {
+            CoronaParserImpl coronaParser = new CoronaParserImpl();
+            if (!txtfield_choice.getText().isBlank()) {
+                label_info.setText("");
+                label_country.setText(String.valueOf(coronaParser.parserUniv(txtfield_choice.getText()).getString("country")));
+                label_test.setText(String.valueOf(coronaParser.parserUniv(txtfield_choice.getText()).getInt("cases")));
+                label_today.setText(String.valueOf(coronaParser.parserUniv(txtfield_choice.getText()).getInt("todayDeaths")));
+                label_deaths.setText(String.valueOf(coronaParser.parserUniv(txtfield_choice.getText()).getInt("deaths")));
+                label_critical.setText(String.valueOf(coronaParser.parserUniv(txtfield_choice.getText()).getInt("critical")));
+                label_actif.setText(String.valueOf(coronaParser.parserUniv(txtfield_choice.getText()).getInt("active")));
+                label_guerie.setText(String.valueOf(coronaParser.parserUniv(txtfield_choice.getText()).getInt("recovered")));
+            }
+        }catch(Exception e){
+            label_info.setText("Ce pays n'existe pas !");
+        }
+    }
+
     private void initializeContextMenu(){
         MenuItem exitItem = new MenuItem("Exit");
         exitItem.setOnAction(event ->{
-            System.exit(0);
+            exit();
         });
         final ContextMenu contextMenu = new ContextMenu(exitItem);
         vbox.addEventHandler(MouseEvent.MOUSE_PRESSED, event -> {
