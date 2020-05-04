@@ -31,7 +31,7 @@ public class CoronaRepo {
 
 //Getters
 
-    public String getCountry() { return this.country; };
+    public String getCountry() { return this.country; }
 
     public int getCriticals() {
         return this.criticals;
