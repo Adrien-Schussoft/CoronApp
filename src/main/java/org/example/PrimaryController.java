@@ -40,11 +40,6 @@ public class PrimaryController implements Initializable {
     VBox vbox = new VBox();
 
     @FXML
-    private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
-    }
-
-    @FXML
     private void exit() {
         Platform.exit();
         System.exit(0);
@@ -71,7 +66,7 @@ public class PrimaryController implements Initializable {
     }
 
     @FXML
-    private void setCountryChoicedData() throws IOException {
+    private void setCountryChoicedData() {
 
         try {
             CoronaParserImpl coronaParser = new CoronaParserImpl();
