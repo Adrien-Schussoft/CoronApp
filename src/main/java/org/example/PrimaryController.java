@@ -67,7 +67,6 @@ public class PrimaryController implements Initializable {
 
     @FXML
     private void setCountryChoicedData() {
-
         try {
             CoronaParserImpl coronaParser = new CoronaParserImpl();
             if (!txtfield_choice.getText().isBlank()) {
@@ -75,6 +74,7 @@ public class PrimaryController implements Initializable {
                 label_country.setText(String.valueOf(coronaParser.parserUniv(txtfield_choice.getText()).getString("country")));
                 label_test.setText(String.valueOf(coronaParser.parserUniv(txtfield_choice.getText()).getInt("cases")));
                 label_today.setText(String.valueOf(coronaParser.parserUniv(txtfield_choice.getText()).getInt("todayDeaths")));
+                label_todayCases.setText(String.valueOf(coronaParser.parserUniv(txtfield_choice.getText()).getInt("todayCases")));
                 label_deaths.setText(String.valueOf(coronaParser.parserUniv(txtfield_choice.getText()).getInt("deaths")));
                 label_critical.setText(String.valueOf(coronaParser.parserUniv(txtfield_choice.getText()).getInt("critical")));
                 label_actif.setText(String.valueOf(coronaParser.parserUniv(txtfield_choice.getText()).getInt("active")));
