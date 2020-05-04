@@ -25,11 +25,9 @@ public class CoronaParserFrance {
             while ((inputLine = in.readLine()) != null) {
                 response1.append(inputLine);
             }
-            JSONObject jso = new JSONObject(response1.toString());
+            JSONObject jso = new JSONObject(response1.toString()); //JSONObject contenant response1
             in.close();
 
-        JSONObject no = new JSONObject(response1.toString()); //JSONObject contenant response1
-
-        return no;
+        return jso;
     }
 }
