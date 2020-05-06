@@ -51,7 +51,7 @@ public class PrimaryController implements Initializable {
         try {
             CoronaRepo coronaRepo = new CoronaRepo();
             label_info.setText("");
-            label_country.setText(String.valueOf(coronaRepo.getCountry()));
+            label_country.setText(coronaRepo.getCountry());
             label_test.setText(String.valueOf(coronaRepo.getCases()));
             label_todayCases.setText(String.valueOf(coronaRepo.getTodayCases()));
             label_today.setText(String.valueOf(coronaRepo.getTodayDeaths()));
