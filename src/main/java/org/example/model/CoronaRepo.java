@@ -24,7 +24,7 @@ public class CoronaRepo {
         setCriticals(coronaParser.parserUniv(defautChoice).getInt("critical"));
         setTodayCases(coronaParser.parserUniv(defautChoice).getInt("todayCases"));
         setDeaths(coronaParser.parserUniv(defautChoice).getInt("deaths"));
-        setTodayCases(coronaParser.parserUniv(defautChoice).getInt("deaths"));
+        setTodayDeaths(coronaParser.parserUniv(defautChoice).getInt("todayDeaths"));
         setRecovered(coronaParser.parserUniv(defautChoice).getInt("recovered"));
         setActive(coronaParser.parserUniv(defautChoice).getInt("active"));
     }
