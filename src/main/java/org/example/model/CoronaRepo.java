@@ -1,7 +1,5 @@
 package org.example.model;
 
-import javafx.beans.property.SimpleIntegerProperty;
-
 import java.io.IOException;
 
 public class CoronaRepo {
@@ -30,8 +28,6 @@ public class CoronaRepo {
         setRecovered(coronaParser.parserUniv(defautChoice).getInt("recovered"));
         setActive(coronaParser.parserUniv(defautChoice).getInt("active"));
     }
-
-//Getters
 
     public String getCountry() { return this.country; }
 
