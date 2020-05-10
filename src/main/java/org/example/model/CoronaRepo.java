@@ -54,8 +54,8 @@ public class CoronaRepo {
         return defaultChoice;
     }
 
-    public void setDefautChoice(String defautChoice) {
-        this.defaultChoice = defautChoice;
+    public void setDefaultChoice(String defaultChoice) {
+        this.defaultChoice = defaultChoice;
     }
 
     public void setCoronaParser(CoronaParserImpl coronaParser) {
