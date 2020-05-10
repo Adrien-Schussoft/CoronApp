@@ -4,92 +4,66 @@ import java.io.IOException;
 
 public class CoronaRepo {
 
-    private String country;
-    private int criticals;
-    private int cases;
-    private int todayCases;
-    private int deaths;
-    private int todayDeaths;
-    private int recovered;
-    private int active;
     private String defautChoice;
-
     CoronaParserImpl coronaParser = new CoronaParserImpl();
+    CoronaEntity coronaEntity = new CoronaEntity();
 
     public CoronaRepo() throws IOException {
 
         setDefautChoice("france");
-        setCountry(coronaParser.parserUniv(defautChoice).getString("country"));
-        setCases(coronaParser.parserUniv(defautChoice).getInt("critical"));
-        setCriticals(coronaParser.parserUniv(defautChoice).getInt("critical"));
-        setTodayCases(coronaParser.parserUniv(defautChoice).getInt("todayCases"));
-        setDeaths(coronaParser.parserUniv(defautChoice).getInt("deaths"));
-        setTodayDeaths(coronaParser.parserUniv(defautChoice).getInt("todayDeaths"));
-        setRecovered(coronaParser.parserUniv(defautChoice).getInt("recovered"));
-        setActive(coronaParser.parserUniv(defautChoice).getInt("active"));
+        coronaEntity.setCountry(coronaParser.parserUniv(defautChoice).getString("country"));
+        coronaEntity.setCases(coronaParser.parserUniv(defautChoice).getInt("cases"));
+        coronaEntity.setCriticals(coronaParser.parserUniv(defautChoice).getInt("critical"));
+        coronaEntity.setTodayCases(coronaParser.parserUniv(defautChoice).getInt("todayCases"));
+        coronaEntity.setDeaths(coronaParser.parserUniv(defautChoice).getInt("deaths"));
+        coronaEntity.setTodayDeaths(coronaParser.parserUniv(defautChoice).getInt("todayDeaths"));
+        coronaEntity.setRecovered(coronaParser.parserUniv(defautChoice).getInt("recovered"));
+        coronaEntity.setActive(coronaParser.parserUniv(defautChoice).getInt("active"));
     }
 
-    public String getCountry() { return this.country; }
+    public String getCountry() {
+        return coronaEntity.getCountry(); }
 
     public int getCriticals() {
-        return this.criticals;
+        return coronaEntity.getCriticals();
     }
 
-    public int getCases() { return this.cases; }
+    public int getCases() {
+        return coronaEntity.getCases(); }
 
     public int getTodayCases() {
-        return this.todayCases;
+        return coronaEntity.getTodayCases();
     }
 
     public int getDeaths() {
-        return this.deaths;
+        return coronaEntity.getDeaths();
     }
 
     public int getTodayDeaths() {
-        return this.todayDeaths;
+        return coronaEntity.getTodayDeaths();
     }
 
     public int getRecovered() {
-        return this.recovered;
+        return coronaEntity.getRecovered();
     }
 
     public int getActive() {
-        return this.active;
+        return coronaEntity.getActive();
     }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public void setCriticals(int criticals) {
-        this.criticals = criticals;
-    }
-
-    public void setCases(int cases) {
-        this.cases = cases;
-    }
-
-    public void setTodayCases(int todayCases) {
-        this.todayCases = todayCases;
-    }
-
-    public void setDeaths(int deaths) {
-        this.deaths = deaths;
-    }
-
-    public void setTodayDeaths(int todayDeaths) {
-        this.todayDeaths = todayDeaths;
-    }
-
-    public void setRecovered(int recovered) {
-        this.recovered = recovered;
-    }
-
-    public void setActive(int active) {
-        this.active = active;
+    public String getDefautChoice() {
+        return defautChoice;
     }
 
     public void setDefautChoice(String defautChoice) {
         this.defautChoice = defautChoice;
+    }
+
+    public void setCoronaParser(CoronaParserImpl coronaParser) {
+        this.coronaParser = coronaParser;
+    }
+
+    public void setCoronaEntity(CoronaEntity coronaEntity) {
+        this.coronaEntity = coronaEntity;
     }
 }
