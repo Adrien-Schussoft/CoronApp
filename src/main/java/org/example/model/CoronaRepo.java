@@ -5,12 +5,11 @@ import java.io.IOException;
 public class CoronaRepo {
 
     private String defautChoice;
-    CoronaParserImpl coronaParser = new CoronaParserImpl();
-    CoronaEntity coronaEntity = new CoronaEntity();
+    private CoronaParserImpl coronaParser = new CoronaParserImpl();
+    private CoronaEntity coronaEntity = new CoronaEntity();
 
-    public CoronaRepo() throws IOException {
+    public CoronaRepo(String defautChoice) throws IOException {
 
-        setDefautChoice("france");
         coronaEntity.setCountry(coronaParser.parserUniv(defautChoice).getString("country"));
         coronaEntity.setCases(coronaParser.parserUniv(defautChoice).getInt("cases"));
         coronaEntity.setCriticals(coronaParser.parserUniv(defautChoice).getInt("critical"));

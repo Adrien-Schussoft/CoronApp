@@ -14,6 +14,12 @@ import org.example.model.CoronaParserImpl;
 
 public class PrimaryController implements Initializable {
 
+    private String defaultChoice;
+    private CoronaRepo coronaRepo = new CoronaRepo(defaultChoice = "france");
+
+    public PrimaryController() throws IOException {
+    }
+
     @FXML
     Label label_test = new Label();
     @FXML
@@ -39,6 +45,7 @@ public class PrimaryController implements Initializable {
     @FXML
     VBox vbox = new VBox();
 
+
     @FXML
     private void exit() {
         Platform.exit();
@@ -48,20 +55,8 @@ public class PrimaryController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        try {
-            CoronaRepo coronaRepo = new CoronaRepo();
-            label_info.setText("");
-            label_country.setText(coronaRepo.getCountry());
-            label_test.setText(String.valueOf(coronaRepo.getCases()));
-            label_todayCases.setText(String.valueOf(coronaRepo.getTodayCases()));
-            label_today.setText(String.valueOf(coronaRepo.getTodayDeaths()));
-            label_deaths.setText(String.valueOf(coronaRepo.getDeaths()));
-            label_critical.setText(String.valueOf(coronaRepo.getCriticals()));
-            label_actif.setText(String.valueOf(coronaRepo.getActive()));
-            label_guerie.setText(String.valueOf(coronaRepo.getRecovered()));
-             } catch (IOException e) {
-                 e.printStackTrace();
-        }
+        label_info.setText("");
+        initializeData();
         initializeContextMenu();
     }
 
@@ -83,6 +78,18 @@ public class PrimaryController implements Initializable {
         }catch(Exception e){
             label_info.setText("Ce pays n'existe pas !");
         }
+    }
+
+    private void initializeData() {
+        label_info.setText("");
+        label_country.setText(coronaRepo.getCountry());
+        label_test.setText(String.valueOf(coronaRepo.getCases()));
+        label_todayCases.setText(String.valueOf(coronaRepo.getTodayCases()));
+        label_today.setText(String.valueOf(coronaRepo.getTodayDeaths()));
+        label_deaths.setText(String.valueOf(coronaRepo.getDeaths()));
+        label_critical.setText(String.valueOf(coronaRepo.getCriticals()));
+        label_actif.setText(String.valueOf(coronaRepo.getActive()));
+        label_guerie.setText(String.valueOf(coronaRepo.getRecovered()));
     }
 
     private void initializeContextMenu(){
