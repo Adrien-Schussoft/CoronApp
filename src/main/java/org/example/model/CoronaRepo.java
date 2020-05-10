@@ -4,20 +4,20 @@ import java.io.IOException;
 
 public class CoronaRepo {
 
-    private String defautChoice;
+    private String defaultChoice;
     private CoronaParserImpl coronaParser = new CoronaParserImpl();
     private CoronaEntity coronaEntity = new CoronaEntity();
 
-    public CoronaRepo(String defautChoice) throws IOException {
+    public CoronaRepo(String defaultChoice) throws IOException {
 
-        coronaEntity.setCountry(coronaParser.parserUniv(defautChoice).getString("country"));
-        coronaEntity.setCases(coronaParser.parserUniv(defautChoice).getInt("cases"));
-        coronaEntity.setCriticals(coronaParser.parserUniv(defautChoice).getInt("critical"));
-        coronaEntity.setTodayCases(coronaParser.parserUniv(defautChoice).getInt("todayCases"));
-        coronaEntity.setDeaths(coronaParser.parserUniv(defautChoice).getInt("deaths"));
-        coronaEntity.setTodayDeaths(coronaParser.parserUniv(defautChoice).getInt("todayDeaths"));
-        coronaEntity.setRecovered(coronaParser.parserUniv(defautChoice).getInt("recovered"));
-        coronaEntity.setActive(coronaParser.parserUniv(defautChoice).getInt("active"));
+        coronaEntity.setCountry(coronaParser.parserUniv(defaultChoice).getString("country"));
+        coronaEntity.setCases(coronaParser.parserUniv(defaultChoice).getInt("cases"));
+        coronaEntity.setCriticals(coronaParser.parserUniv(defaultChoice).getInt("critical"));
+        coronaEntity.setTodayCases(coronaParser.parserUniv(defaultChoice).getInt("todayCases"));
+        coronaEntity.setDeaths(coronaParser.parserUniv(defaultChoice).getInt("deaths"));
+        coronaEntity.setTodayDeaths(coronaParser.parserUniv(defaultChoice).getInt("todayDeaths"));
+        coronaEntity.setRecovered(coronaParser.parserUniv(defaultChoice).getInt("recovered"));
+        coronaEntity.setActive(coronaParser.parserUniv(defaultChoice).getInt("active"));
     }
 
     public String getCountry() {
@@ -51,11 +51,11 @@ public class CoronaRepo {
     }
 
     public String getDefautChoice() {
-        return defautChoice;
+        return defaultChoice;
     }
 
     public void setDefautChoice(String defautChoice) {
-        this.defautChoice = defautChoice;
+        this.defaultChoice = defautChoice;
     }
 
     public void setCoronaParser(CoronaParserImpl coronaParser) {
