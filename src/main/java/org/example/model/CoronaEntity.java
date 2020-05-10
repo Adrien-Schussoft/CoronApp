@@ -11,6 +11,21 @@ public class CoronaEntity {
     private int recovered;
     private int active;
 
+    public CoronaEntity() {
+    }
+
+    public CoronaEntity(String country,int criticals,int cases,int todayCases,int deaths,int todayDeaths,int recovered,int active) {
+        super();
+        this.country = country;
+        this.criticals = criticals;
+        this.cases = cases;
+        this.todayCases = todayCases;
+        this.deaths = deaths;
+        this.todayDeaths = todayDeaths;
+        this.recovered =recovered;
+        this.active = active;
+    }
+
     public String getCountry() {
         return country;
     }
