@@ -50,7 +50,7 @@ public class CoronaRepo {
         return coronaEntity.getActive();
     }
 
-    public String getDefautChoice() {
+    public String getDefaultChoice() {
         return defaultChoice;
     }
 
