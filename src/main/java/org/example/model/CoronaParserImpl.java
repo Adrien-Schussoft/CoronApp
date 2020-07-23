@@ -6,12 +6,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 
 public class CoronaParserImpl implements ICoronaParser {
 
     @Override
     public JSONObject parserUniv(String country) throws IOException {
-
+        country = country.replace(" ", "%20");
         String url = "https://coronavirus-19-api.herokuapp.com/countries/"+country;
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -29,5 +30,18 @@ public class CoronaParserImpl implements ICoronaParser {
         in.close();
 
         return jso;
+    }
+
+    public static int StringSearch(String phrase, String lettre) {
+
+        int compteur = 0;
+        phrase = phrase.trim();
+        for (int i = 0; i < phrase.length() - 1; i++) {
+            if (phrase.substring(i, i + 1).contentEquals(lettre)) {
+                compteur++;
+            }
+        }
+        //System.out.println(compteur);
+        return compteur;
     }
 }
