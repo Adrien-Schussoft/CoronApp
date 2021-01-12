@@ -1,6 +1,8 @@
-D:\Home\dev\IntelliJ\JavaFX\CoronaWidget\TestParser\src\main\java\org\example\Launcher.java
-D:\Home\dev\IntelliJ\JavaFX\CoronaWidget\TestParser\src\main\java\org\example\PrimaryController.java
-D:\Home\dev\IntelliJ\JavaFX\CoronaWidget\TestParser\src\main\java\module-info.java
-D:\Home\dev\IntelliJ\JavaFX\CoronaWidget\TestParser\src\main\java\org\example\App.java
-D:\Home\dev\IntelliJ\JavaFX\CoronaWidget\TestParser\src\main\java\org\example\CoronaParser.java
-D:\Home\dev\IntelliJ\JavaFX\CoronaWidget\TestParser\src\main\java\org\example\SecondaryController.java
+D:\Home\dev\IntelliJ\JavaFX\CoronaWidget\Nouveau dossier\CoronApp\src\main\java\org\example\model\CoronaEntity.java
+D:\Home\dev\IntelliJ\JavaFX\CoronaWidget\Nouveau dossier\CoronApp\src\main\java\module-info.java
+D:\Home\dev\IntelliJ\JavaFX\CoronaWidget\Nouveau dossier\CoronApp\src\main\java\org\example\model\ICoronaParser.java
+D:\Home\dev\IntelliJ\JavaFX\CoronaWidget\Nouveau dossier\CoronApp\src\main\java\org\example\model\CoronaParserImpl.java
+D:\Home\dev\IntelliJ\JavaFX\CoronaWidget\Nouveau dossier\CoronApp\src\main\java\org\example\PrimaryController.java
+D:\Home\dev\IntelliJ\JavaFX\CoronaWidget\Nouveau dossier\CoronApp\src\main\java\org\example\model\CoronaRepo.java
+D:\Home\dev\IntelliJ\JavaFX\CoronaWidget\Nouveau dossier\CoronApp\src\main\java\org\example\App.java
+D:\Home\dev\IntelliJ\JavaFX\CoronaWidget\Nouveau dossier\CoronApp\src\main\java\org\example\Launcher.java
